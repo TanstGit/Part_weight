@@ -1,0 +1,9 @@
+select
+a.Part_No,
+a.Part_Type,
+c.Attribute_Name,
+b.Value
+from Part_v_Part_Attribute b
+inner join Part_v_Part a on b.Part_Key = a.Part_Key
+inner join Part_v_Attribute c on b.Attribute_Key = c.Attribute_Key
+where c.Attribute_Name = 'Part Weight' and a.Part_Type = 'Finished Goods'
